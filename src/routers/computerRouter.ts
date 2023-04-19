@@ -1,15 +1,11 @@
 import express, { Request, Response } from "express";
+import { changeComputer, createComputer, getAllComputers, getSingleComputer, removeComputer } from "../controllers/computerController";
 
 export const computerRouter = express.Router();
 
 computerRouter
-    .get("/", (req:Request, res:Response)=>{
-    })
-    .get("/:id", (req:Request, res:Response)=>{
-    })
-    .post("/", (req:Request, res:Response)=>{
-    })
-    .put("/:id", (req:Request, res:Response)=>{
-    })
-    .delete("/:id", (req:Request, res:Response)=>{
-    });
+    .get("/", getAllComputers)
+    .get("/:id", getSingleComputer)
+    .post("/", createComputer)
+    .put("/:id", changeComputer)
+    .delete("/:id", removeComputer);

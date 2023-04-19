@@ -1,15 +1,11 @@
 import express, { Request, Response } from "express";
+import { changeTelevision, createTelevision, getAllTelevisions, getSingleTelevision, removeTelevision } from "../controllers/televisionController";
 
 export const televisionRouter = express.Router();
 
 televisionRouter
-    .get("/", (req:Request, res:Response)=>{
-    })
-    .get("/:id", (req:Request, res:Response)=>{
-    })
-    .post("/", (req:Request, res:Response)=>{
-    })
-    .put("/:id", (req:Request, res:Response)=>{
-    })
-    .delete("/:id", (req:Request, res:Response)=>{
-    });
+    .get("/", getAllTelevisions)
+    .get("/:id", getSingleTelevision)
+    .post("/", createTelevision)
+    .put("/:id", changeTelevision)
+    .delete("/:id", removeTelevision);

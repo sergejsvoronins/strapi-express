@@ -1,15 +1,11 @@
 import express, { Request, Response } from "express";
+import { changeMobile, createMobile, getAllMobiles, getSingleMobile, removeMobile } from "../controllers/mobileController";
 
 export const mobileRouter = express.Router();
 
 mobileRouter
-    .get("/", (req:Request, res:Response)=>{
-    })
-    .get("/:id", (req:Request, res:Response)=>{
-    })
-    .post("/", (req:Request, res:Response)=>{
-    })
-    .put("/:id", (req:Request, res:Response)=>{
-    })
-    .delete("/:id", (req:Request, res:Response)=>{
-    });
+    .get("/", getAllMobiles)
+    .get("/:id", getSingleMobile)
+    .post("/", createMobile)
+    .put("/:id", changeMobile)
+    .delete("/:id", removeMobile);

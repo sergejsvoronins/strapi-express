@@ -14,7 +14,7 @@ app.use("/computers", computerRouter);
 app.use("/mobiles", mobileRouter);
 app.use("/televisions", televisionRouter);
 app.get("/", (req:Request, res:Response)=>{
-    res.send("it working");
+    res.send("it is working");
 })
 app.listen(PORT, ()=> {
     console.log(`http://localhost:${PORT}`);
