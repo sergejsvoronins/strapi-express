@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { addAudio, deleteAudio, getAudio, getAudios, updateAudio } from "../cms-services/strapiService";
+import { addAudio, deleteAudio, getAudio, getAudios, updateAudio } from "../services/strapiService";
 import { IAudioSingle } from "../models/audio";
 
 export const getAllAudios = async (req:Request, res:Response)=>{

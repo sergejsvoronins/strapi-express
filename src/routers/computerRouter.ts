@@ -1,11 +1,12 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import { changeComputer, createComputer, getAllComputers, getSingleComputer, removeComputer } from "../controllers/computerController";
+import { forceAuthorize } from "../middlewares/midlewares";
 
 export const computerRouter = express.Router();
 
 computerRouter
     .get("/", getAllComputers)
     .get("/:id", getSingleComputer)
-    .post("/", createComputer)
-    .put("/:id", changeComputer)
-    .delete("/:id", removeComputer);
+    .post("/", forceAuthorize, createComputer)
+    .put("/:id", forceAuthorize, changeComputer)
+    .delete("/:id", forceAuthorize, removeComputer);

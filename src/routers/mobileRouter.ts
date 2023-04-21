@@ -1,11 +1,12 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import { changeMobile, createMobile, getAllMobiles, getSingleMobile, removeMobile } from "../controllers/mobileController";
+import { forceAuthorize } from "../middlewares/midlewares";
 
 export const mobileRouter = express.Router();
 
 mobileRouter
     .get("/", getAllMobiles)
     .get("/:id", getSingleMobile)
-    .post("/", createMobile)
-    .put("/:id", changeMobile)
-    .delete("/:id", removeMobile);
+    .post("/", forceAuthorize, createMobile)
+    .put("/:id", forceAuthorize, changeMobile)
+    .delete("/:id", forceAuthorize, removeMobile);

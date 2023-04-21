@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import { addComputer, addMobile, deleteComputer, deleteMobile, getComputer, getComputers, getMobile, getMobiles, updateComputer, updateMobile } from "../cms-services/strapiService";
-import { IComputerSingle } from "../models/computer";
+import { addMobile, deleteMobile, getMobile, getMobiles, updateMobile } from "../services/strapiService";
 import { IMobileSingle } from "../models/mobile";
 
 export const getAllMobiles = async (req:Request, res:Response)=>{

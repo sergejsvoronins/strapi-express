@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { addComputer, deleteComputer, getComputer, getComputers, updateComputer } from "../cms-services/strapiService";
+import { addComputer, deleteComputer, getComputer, getComputers, updateComputer } from "../services/strapiService";
 import { IComputerSingle } from "../models/computer";
 
 export const getAllComputers = async (req:Request, res:Response)=>{

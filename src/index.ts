@@ -3,18 +3,21 @@ import { audioRouter } from "./routers/audioRouter";
 import { computerRouter } from "./routers/computerRouter";
 import { mobileRouter } from "./routers/mobileRouter";
 import { televisionRouter } from "./routers/televisionRouter";
+import { userRouter } from "./routers/userRouter";
+import { authorization } from "./middlewares/midlewares";
 
 const app = express();
 const PORT = 8008;
 app.use(express.json());
 app.use(express.urlencoded());
-// app.use("/users", userRouter);
+app.use(authorization);
+app.use("/users", userRouter);
 app.use("/audios", audioRouter);
 app.use("/computers", computerRouter);
 app.use("/mobiles", mobileRouter);
 app.use("/televisions", televisionRouter);
-app.get("/", (req:Request, res:Response)=>{
-    res.send("it is working");
+app.get("/", (req:any, res:Response)=>{
+    res.send(req.user)
 })
 app.listen(PORT, ()=> {
     console.log(`http://localhost:${PORT}`);

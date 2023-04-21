@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { addMobile, addTelevision, deleteMobile, deleteTelevision, getTelevision, getTelevisions, updateMobile, updateTelevision } from "../cms-services/strapiService";
+import { addTelevision, deleteTelevision, getTelevision, getTelevisions, updateTelevision } from "../services/strapiService";
 import { ITelevisionSingle } from "../models/television";
 
 export const getAllTelevisions = async (req:Request, res:Response)=>{
