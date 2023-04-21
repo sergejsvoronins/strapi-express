@@ -7,7 +7,7 @@ import { userRouter } from "./routers/userRouter";
 import { authorization } from "./middlewares/midlewares";
 
 const app = express();
-const PORT = Number(process.env.PORT);
+const PORT = 8008;
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(authorization);
