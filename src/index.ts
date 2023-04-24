@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express, { Response } from "express";
 import { audioRouter } from "./routers/audioRouter";
 import { computerRouter } from "./routers/computerRouter";
 import { mobileRouter } from "./routers/mobileRouter";
@@ -17,7 +17,10 @@ app.use("/computers", computerRouter);
 app.use("/mobiles", mobileRouter);
 app.use("/televisions", televisionRouter);
 app.get("/", (req:any, res:Response)=>{
-    res.send(req.user)
+    res.send({
+        start: "Startpage",
+        user: req.user
+    });
 })
 app.listen(PORT, ()=> {
     console.log(`http://localhost:${PORT}`);
