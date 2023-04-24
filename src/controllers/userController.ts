@@ -27,7 +27,6 @@ export const loginAccount = (req:Request, res:Response) => {
             const correctPassword = comparePassword(newUser.password, hashedPassword)
             if (correctPassword) {
                 const jwtToken = getJWTToken(account)
-                console.log(jwtToken);
                 res.send(jwtToken)
             } else {
                 res.sendStatus(404)

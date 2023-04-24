@@ -3,6 +3,10 @@ Så går det till att använda mitt API:
 1. Du ska stå i rooten och installera alla npm paket med npm istall
 2. Sedan flyttar till mappen strapi och installera alla paket där också
 3. Efter det ska du starta både strapi och express server genom att öppna två terminal och skriva npm start. Se till att du står i rätt mapp i varje terminal.
+
+OBS! Du ska få tillgång till SECRET_FRASE som ligger i env fil. Det äbda du ska göra är att du går in på utils och sätter följande värde på variabel i rad 7:
+"secret-pass-phrase" as any.
+
 4. Sedan startar du POSTMAN. Serveradress per default http://localhost:8008 som möter dig med information att det är en startsida och att du inte är inloggad
 5. Som icke inloggad person kan du ta fram all information om audios,computers,television och mobiles genom att använda endpoints:
 /audios
@@ -18,7 +22,7 @@ och skicka en json object i format:
 }
 7. När du har registrerad dig går du vidare till
 http://localhost:8008/users/login
-och ckiacka samma json objekt som var vid registreringen
+och skicka samma json objekt som var vid registreringen
 {
     "username":"emil",
     "password":"test321"
