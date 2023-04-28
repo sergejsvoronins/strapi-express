@@ -11,7 +11,7 @@ export const registerAccount = (req:Request, res:Response) => {
             res.status(500).send(err);
         }
         else {
-            res.sendStatus(200);
+            res.status(200).json({message:"Account has been created"});
         }
     })
 };

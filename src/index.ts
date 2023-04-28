@@ -5,11 +5,15 @@ import { mobileRouter } from "./routers/mobileRouter";
 import { televisionRouter } from "./routers/televisionRouter";
 import { userRouter } from "./routers/userRouter";
 import { authorization } from "./middlewares/midlewares";
+import cors from "cors";
+
+
 
 const app = express();
 const PORT = 8008;
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(cors());
 app.use(authorization);
 app.use("/users", userRouter);
 app.use("/audios", audioRouter);
